@@ -1,3 +1,23 @@
-﻿<div> 
-    First Page
+﻿@model List<FHIR_Client.Models.Patient>
+
+<div class="table-responsive">
+    <table class="table table-striped ">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Patient Name</th>
+                <th>Date of Birth</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var patient in Model)
+        {
+            <tr>
+                <td>@patient.id</td>
+                <td>@patient.Name</td>
+                <td>@patient.BirthDate</td>
+            </tr>
+        }
+        </tbody>
+    </table>
 </div>
